@@ -61,11 +61,10 @@ class MyGenerator {
     createNewFolderName();
     generatePubspecFile();
     generateFiles();
-    pubGet();
+    await pubGet();
 
     try {
       File(_zipFileName).deleteSync();
-      File(_zipFileFolder).deleteSync(recursive: true);
       File(_zipFileFolder).deleteSync(recursive: true);
     } catch (e) {
       print(e);
@@ -150,9 +149,9 @@ class MyGenerator {
     return true;
   }
 
-  static void pubGet() {
-    Process.run("flutter", ['clean'], workingDirectory: _newFolderPath);
-    Process.run("flutter", ['pub', 'get'], workingDirectory: _newFolderPath);
+  static Future<void> pubGet() async {
+    await Process.run("flutter", ['clean'], workingDirectory: _newFolderPath);
+    await Process.run("flutter", ['pub', 'get'], workingDirectory: _newFolderPath);
   }
 
   static void generateFiles() {
