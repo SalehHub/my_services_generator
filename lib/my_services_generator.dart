@@ -39,6 +39,7 @@ enum Settings {
   firebaseCore,
   firebaseCrashlytics,
   firebaseMessaging,
+  appSettings,
   skipGenerator,
 }
 
@@ -62,8 +63,13 @@ class MyGenerator {
     generateFiles();
     pubGet();
 
-    File(_zipFileName).deleteSync();
-    File(_zipFileFolder).deleteSync(recursive: true);
+    try {
+      File(_zipFileName).deleteSync();
+      File(_zipFileFolder).deleteSync(recursive: true);
+      File(_zipFileFolder).deleteSync(recursive: true);
+    } catch (e) {
+      print(e);
+    }
   }
 
   static Future<void> downloadRepository() async {
