@@ -19,6 +19,8 @@ import 'package:archive/archive_io.dart';
 //       // Settings.firebaseCore,
 //       // Settings.firebaseCrashlytics,
 //       // Settings.firebaseMessaging,
+//       // Settings.appSettings,
+//       // Settings.pinCodeFields,
 //       // Settings.skipGenerator,
 //     ],
 //   );
@@ -40,6 +42,7 @@ enum Settings {
   firebaseCrashlytics,
   firebaseMessaging,
   appSettings,
+  pinCodeFields,
   skipGenerator,
 }
 
