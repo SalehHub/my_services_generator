@@ -21,6 +21,8 @@ import 'package:archive/archive_io.dart';
 //       // Settings.firebaseMessaging,
 //       // Settings.appSettings,
 //       // Settings.pinCodeFields,
+//       // Settings.sqflite,
+//       // Settings.hive,
 //       // Settings.skipGenerator,
 //     ],
 //   );
@@ -43,6 +45,8 @@ enum Settings {
   firebaseMessaging,
   appSettings,
   pinCodeFields,
+  sqflite,
+  hive,
   skipGenerator,
 }
 
@@ -196,7 +200,7 @@ class MyGenerator {
         } else if (file is Directory) {
           copyFiles(file, newFolderPath, sourceFolder);
         }
-      } catch (e, s) {
+      } catch (e) {
         print(e);
       }
     }
