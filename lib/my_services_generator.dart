@@ -9,6 +9,7 @@ import 'package:archive/archive_io.dart';
 //   MyGenerator.generate(
 //     newFolderName,
 //     [
+//       // Settings.flutterAppBadger,
 //       // Settings.googleMaps,
 //       // Settings.imagePicker,
 //       // Settings.photoView,
@@ -33,6 +34,7 @@ extension FileExtention on FileSystemEntity {
 }
 
 enum Settings {
+  flutterAppBadger,
   googleMaps,
   imagePicker,
   photoView,
