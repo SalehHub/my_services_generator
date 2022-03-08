@@ -170,6 +170,11 @@ class MyGenerator {
     var from = Directory(_sourceFolder + "/flags");
     var to = Directory(_newFolderPath + "/flags");
     copyFolder(from, to);
+
+    
+    var from2 = Directory(_sourceFolder + "/google_fonts");
+    var to2 = Directory(_newFolderPath + "/google_fonts");
+    copyFolder(from2, to2);
   }
 
   static copyFolder(Directory from, Directory to) {
