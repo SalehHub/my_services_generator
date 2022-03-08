@@ -161,20 +161,22 @@ class MyGenerator {
   static Future<void> pubGet() async {
     await Process.run("flutter", ['clean'], workingDirectory: _newFolderPath);
     await Process.run("flutter", ['pub', 'get'], workingDirectory: _newFolderPath);
+    await Process.run("flutter", ['pub', 'run', 'build_runner', 'build', '--delete-conflicting-outputs'], workingDirectory: _newFolderPath);
+    await Process.run("flutter", ['format', '-l', '200', '.'], workingDirectory: _newFolderPath);
   }
 
   static void generateFiles() {
     var lib = Directory(_sourceFolder + "/lib");
     copyFiles(lib, _newFolderPath, _sourceFolder);
 
-    var from = Directory(_sourceFolder + "/flags");
-    var to = Directory(_newFolderPath + "/flags");
-    copyFolder(from, to);
+    List<String> folders = [
+      'flags',
+      'google_fonts',
+    ];
 
-    
-    var from2 = Directory(_sourceFolder + "/google_fonts");
-    var to2 = Directory(_newFolderPath + "/google_fonts");
-    copyFolder(from2, to2);
+    for (String folder in folders) {
+      copyFolder(Directory("$_sourceFolder/$folder"), Directory("$_newFolderPath/$folder"));
+    }
   }
 
   static copyFolder(Directory from, Directory to) {
