@@ -66,10 +66,20 @@ class MyGenerator {
     _sourceFolder = sourceFolder;
 
     await downloadRepository();
+    print("Repository downloaded.");
+
     extractZip();
+    print("Zip file extracted.");
+
     createNewFolderName();
+    print('my_services Folder created.');
+
     generatePubspecFile();
+    print('Pubspec.yaml generated.');
+
     generateFiles();
+    print("Files & folders generated.");
+
     await pubGet();
 
     try {
@@ -78,6 +88,7 @@ class MyGenerator {
     } catch (e) {
       print(e);
     }
+    print("Delete zip & temp folder.");
   }
 
   static Future<void> downloadRepository() async {
@@ -160,9 +171,16 @@ class MyGenerator {
 
   static Future<void> pubGet() async {
     await Process.run("flutter", ['clean'], workingDirectory: _newFolderPath);
+    print("flutter clean.");
+
     await Process.run("flutter", ['pub', 'get'], workingDirectory: _newFolderPath);
+    print("flutter pub get.");
+
     await Process.run("flutter", ['pub', 'run', 'build_runner', 'build', '--delete-conflicting-outputs'], workingDirectory: _newFolderPath);
+    print("flutter pub run build_runner build --delete-conflicting-outputs.");
+
     await Process.run("flutter", ['format', '-l', '200', '.'], workingDirectory: _newFolderPath);
+    print("flutter format -l 200 . .");
   }
 
   static void generateFiles() {
@@ -176,6 +194,7 @@ class MyGenerator {
 
     for (String folder in folders) {
       copyFolder(Directory("$_sourceFolder/$folder"), Directory("$_newFolderPath/$folder"));
+      print("Copy $folder folder.");
     }
   }
 
