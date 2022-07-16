@@ -20,6 +20,7 @@ import 'package:archive/archive_io.dart';
 //       // Settings.firebaseCore,
 //       // Settings.firebaseCrashlytics,
 //       // Settings.firebaseMessaging,
+//       // Settings.firebaseAuth,
 //       // Settings.appSettings,
 //       // Settings.pinCodeFields,
 //       // Settings.sqflite,
@@ -42,13 +43,18 @@ enum Settings {
   mapLauncher,
   appLinks,
   flutterSvg,
+  //
   firebaseCore,
   firebaseCrashlytics,
   firebaseMessaging,
+  firebaseAuth,
+  //
   appSettings,
   pinCodeFields,
+  //
   sqflite,
   hive,
+  //
   skipGenerator,
 }
 
