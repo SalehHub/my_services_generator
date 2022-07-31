@@ -9,23 +9,24 @@ import 'package:archive/archive_io.dart';
 //   MyGenerator.generate(
 //     newFolderName,
 //     [
-//       // Settings.flutterAppBadger,
-//       // Settings.googleMaps,
-//       // Settings.imagePicker,
-//       // Settings.photoView,
-//       // Settings.sharePlus,
-//       // Settings.mapLauncher,
-//       // Settings.appLinks,
-//       // Settings.flutterSvg,
-//       // Settings.firebaseCore,
-//       // Settings.firebaseCrashlytics,
-//       // Settings.firebaseMessaging,
-//       // Settings.firebaseAuth,
-//       // Settings.appSettings,
-//       // Settings.pinCodeFields,
-//       // Settings.sqflite,
-//       // Settings.hive,
-//       // Settings.skipGenerator,
+//       // Package.flutterAppBadger,
+//       // Package.googleMaps,
+//       // Package.imagePicker,
+//       // Package.photoView,
+//       // Package.sharePlus,
+//       // Package.mapLauncher,
+//       // Package.appLinks,
+//       // Package.flutterSvg,
+//       // Package.firebaseCore,
+//       // Package.firebaseCrashlytics,
+//       // Package.firebaseMessaging,
+//       // Package.firebaseAuth,
+//       // Package.location,
+//       // Package.appSettings,
+//       // Package.pinCodeFields,
+//       // Package.sqflite,
+//       // Package.hive,
+//       // Package.skipGenerator,
 //     ],
 //   );
 // }
@@ -34,7 +35,7 @@ extension FileExtention on FileSystemEntity {
   String get name => path.split("/").last;
 }
 
-enum Settings {
+enum Package {
   flutterAppBadger,
   googleMaps,
   imagePicker,
@@ -49,23 +50,25 @@ enum Settings {
   firebaseMessaging,
   firebaseAuth,
   //
+  location,
+  //
   appSettings,
   pinCodeFields,
   //
   sqflite,
   hive,
   //
-  skipGenerator,
+  // skipGenerator,
 }
 
 class MyGenerator {
-  static List<Settings> _toRemove = [];
+  static List<Package> _toRemove = [];
   static String _newFolderPath = '../my_services';
   static String _sourceFolder = '../';
   static String _zipFileName = 'my_services.zip';
   static String _zipFileFolder = 'my_services_out';
 
-  static Future<void> generate(newFolderPath, List<Settings> toRemove) async {
+  static Future<void> generate(newFolderPath, List<Package> toRemove) async {
     String sourceFolder = "$_zipFileFolder/my_services-main";
     _toRemove = toRemove;
     _newFolderPath = newFolderPath;
