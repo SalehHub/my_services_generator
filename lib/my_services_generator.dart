@@ -68,7 +68,7 @@ class MyGenerator {
   static String _zipFileName = 'my_services.zip';
   static String _zipFileFolder = 'my_services_out';
 
-  static Future<void> generate({required String newFolderPath, required List<Package> usedPackages}) async {
+  static Future<void> generate({String newFolderPath = 'my_services', required List<Package> usedPackages}) async {
     String sourceFolder = "$_zipFileFolder/my_services-main";
 
     final List<Package> packagesNotUsed = Package.values;
