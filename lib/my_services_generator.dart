@@ -71,7 +71,7 @@ class MyGenerator {
   static Future<void> generate({String newFolderPath = 'my_services', required List<Package> usedPackages}) async {
     String sourceFolder = "$_zipFileFolder/my_services-main";
 
-    final List<Package> packagesNotUsed = Package.values;
+    final List<Package> packagesNotUsed = List.of(Package.values);
     packagesNotUsed.removeWhere((e) => !usedPackages.contains(e));
 
     _toRemove = packagesNotUsed;
