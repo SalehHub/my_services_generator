@@ -4,33 +4,6 @@ import 'dart:io';
 import 'package:archive/archive.dart';
 import 'package:archive/archive_io.dart';
 
-// void main() {
-//   String newFolderName = "../my_services";
-//   MyGenerator.generate(
-//     newFolderName,
-//     [
-//       // Package.flutterAppBadger,
-//       // Package.googleMaps,
-//       // Package.imagePicker,
-//       // Package.photoView,
-//       // Package.sharePlus,
-//       // Package.mapLauncher,
-//       // Package.appLinks,
-//       // Package.flutterSvg,
-//       // Package.firebaseCore,
-//       // Package.firebaseCrashlytics,
-//       // Package.firebaseMessaging,
-//       // Package.firebaseAuth,
-//       // Package.location,
-//       // Package.appSettings,
-//       // Package.pinCodeFields,
-//       // Package.sqflite,
-//       // Package.hive,
-//       // Package.skipGenerator,
-//     ],
-//   );
-// }
-
 extension FileExtention on FileSystemEntity {
   String get name => path.split("/").last;
 }
@@ -58,7 +31,7 @@ enum Package {
   sqflite,
   hive,
   //
-  // skipGenerator,
+  dio,
 }
 
 class MyGenerator {
