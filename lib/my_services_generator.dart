@@ -130,9 +130,8 @@ class MyGenerator {
   static String cleanFile(String contents) {
     String t = contents;
     int tags = 'start-'.allMatches(t).length;
-    print("tags:$tags");
+    
     for (int i = 0; i < tags; i++) {
-      print("tag:$i");
       for (var s in _toRemove) {
         String ss = "start-${s.name}";
         String es = "end-${s.name}";
