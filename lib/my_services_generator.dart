@@ -129,17 +129,19 @@ class MyGenerator {
 
   static String cleanFile(String contents) {
     String t = contents;
-    for (var s in _toRemove) {
-      String ss = "start-${s.name}";
-      String es = "end-${s.name}";
-      int start = t.lastIndexOf(ss);
-      int end = t.lastIndexOf(es);
-      if (start == -1 || end == -1) {
-        continue;
+    for (var i in [1, 2, 3, 4, 5]) {
+      for (var s in _toRemove) {
+        String ss = "start-${s.name}";
+        String es = "end-${s.name}";
+        int start = t.lastIndexOf(ss);
+        int end = t.lastIndexOf(es);
+        if (start == -1 || end == -1) {
+          continue;
+        }
+        String bad = t.substring(start, end + es.length);
+        String result = t.replaceAll(bad, "");
+        t = result;
       }
-      String bad = t.substring(start, end + es.length);
-      String result = t.replaceAll(bad, "");
-      t = result;
     }
 
     return t;
