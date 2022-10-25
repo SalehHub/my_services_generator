@@ -129,7 +129,7 @@ class MyGenerator {
 
   static String cleanFile(String contents) {
     String t = contents;
-    int tags = t.allMatches('start-').length;
+    int tags = 'start-'.allMatches(t).length;
     print("tags:$tags");
     for (int i = 0; i < tags; i++) {
       print("tag:$i");
