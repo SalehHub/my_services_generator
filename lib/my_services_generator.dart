@@ -168,8 +168,8 @@ class MyGenerator {
     await Process.run("flutter", ['pub', 'run', 'build_runner', 'build', '--delete-conflicting-outputs'], workingDirectory: _newFolderPath);
     print("flutter pub run build_runner build --delete-conflicting-outputs.");
 
-    await Process.run("flutter", ['format', '-l', '200', '.'], workingDirectory: _newFolderPath);
-    print("flutter format -l 200 . .");
+    await Process.run("dart", ['format', '-l', '200', '.'], workingDirectory: _newFolderPath);
+    print("dart format -l 200 . .");
   }
 
   static void generateFiles() {
