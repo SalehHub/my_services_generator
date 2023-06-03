@@ -165,8 +165,8 @@ class MyGenerator {
     await Process.run("flutter", ['pub', 'get'], workingDirectory: _newFolderPath);
     print("flutter pub get.");
 
-    await Process.run("flutter", ['pub', 'run', 'build_runner', 'build', '--delete-conflicting-outputs'], workingDirectory: _newFolderPath);
-    print("flutter pub run build_runner build --delete-conflicting-outputs.");
+    await Process.run("dart", ['run', 'build_runner', 'build', '--delete-conflicting-outputs'], workingDirectory: _newFolderPath);
+    print("dart run build_runner build --delete-conflicting-outputs.");
 
     await Process.run("dart", ['format', '-l', '200', '.'], workingDirectory: _newFolderPath);
     print("dart format -l 200 . .");
