@@ -7,3 +7,4 @@ environment:
 
 dependencies:
   archive: ^3.3.7
+  yaml: ^3.1.2
