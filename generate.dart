@@ -5,4 +5,6 @@ void main() {
     //packages app use
     usedPackages: [],
   );
+
+  // AppVersionUpdater.update();
 }
