@@ -8,4 +8,3 @@ dependencies:
   archive: ^3.3.7
   yaml: ^3.1.2
   yaml_modify: ^1.0.1
-  yaml_writer: ^1.0.3
