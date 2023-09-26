@@ -5,5 +5,5 @@ version: 1.0.0+2
 environment: 
   sdk: '>=2.17.0 <3.0.0'
 dependencies: 
-  archive: ^3.3.7
+  archive: ^3.4.2
   yaml_modify: ^1.0.1
